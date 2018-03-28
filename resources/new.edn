@@ -1,0 +1,42 @@
+{:name nil
+ :descriptor nil
+ :glance nil
+ :arc nil
+ :heritage nil
+ :gender nil
+ :age 18
+ :birthplace nil
+ :background nil
+ :tier 1
+ :effort 1
+ :xp 0
+ :stats {:might {:base 0
+                 :bonuses {:type 0
+                           :other 0}
+                 :pool 0
+                 :edge 0}
+         :speed {:base 0
+                 :bonuses {:type 0
+                           :other 0}
+                 :pool 0
+                 :edge 0}
+         :intellect {:base 0
+                     :bonuses {:type 0
+                               :other 0}
+                     :pool 0
+                     :edge 0}}
+ :skills {:might {}
+          :speed {}
+          :intellect {}}
+
+ :abilities [{:name nil
+              :note nil}]
+
+ :possessions {:equipment {:name nil
+                           :note nil}
+               :artifacts {:name nil
+                           :note nil}
+               :oddities {:name nil
+                          :note nil}
+               :cyphers {:name nil
+                         :note nil}}}
