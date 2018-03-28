@@ -1,4 +1,4 @@
-(ns numenera.core
+(ns ncu.core
   (:require [numenera.character :as char])
   (:gen-class))
 

@@ -1,7 +1,7 @@
-(ns numenera.character
+(ns ncu.character
   (:require [clojure.spec.alpha :as s]
             [clojure.string :as str]
-            [numenera.io :as io]))
+            [ncu.io :as io]))
 
 (s/def ::age (s/and int? pos?))
 (s/def ::arc (s/nilable string?))
@@ -44,6 +44,7 @@
                              ::value]
                        :opt [::note]))
 
+(s/def ::base (s/and int? pos?))
 (s/def ::base (s/and int? pos?))
 (s/def ::stat (s/keys :req [::kind
                             ::base
@@ -142,15 +143,16 @@
    (assoc c ::name v)))
 
 (defn stat
-  ([c s]
-   (get-in c [::stats s]))
-  ([c s t]
-   (let [stat (get-in c [::stats s])]
-     (case t
+  ([c k]
+   (get-in c [::stats k]))
+  ([c k k' & v]
+   (let [stat (get-in c [::stats k])]
+     (case k'
        ::base (::base stat)
        ::pool (reduce + (::base stat)
                       (map ::bonus (::bonuses stat)))
-       ::edge (::edge stat)))))
+       ::edge (::edge stat)
+       "set base" ()))))
 
 (defn story
   ([c]

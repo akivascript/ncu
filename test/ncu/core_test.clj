@@ -1,6 +1,6 @@
-(ns numenera.core-test
+(ns ncu.core-test
   (:require [clojure.test :refer :all]
-            [numenera.core :refer :all]))
+            [ncu.core :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

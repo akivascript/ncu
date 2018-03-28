@@ -1,4 +1,4 @@
-(ns numenera.prompt
+(ns ncu.prompt
   (:require [numenera.character :as char]))
 
 (defn input
@@ -13,45 +13,6 @@
                   "help or h\t\ttPrints this help documentation.\n"
                   "age [get|set [num]]\t\tAdjusts or returns a character's age"]]
    (apply println commands)))
-
-(defn age
-  ([c]
-   (:age c))
-  ([c v]
-   (assoc c :age v)))
-
-(defn arc
-  ([c]
-   (:arc c))
-  ([c v]
-   (assoc c :arc v)))
-
-(defn birthplace
-  ([c]
-   (:birthplace c))
-  ([c v]
-   (assoc c :birthplace v)))
-
-(defn descriptor
-  ([c]
-   (:descriptor c))
-  ([c v]
-   (assoc c :descriptor v)))
-
-(defn effort
-  ([c]
-   (:effort c))
-  ([c v]
-   (assoc c :effort v)))
-
-(defn might
-  [c]
-  (get-in c))
-(defn story
-  ([c]
-   (println "Story: ") (:story c))
-  ([c v]
-   (assoc c :story v)))
 
 (defn increase
   [c cmd]
@@ -87,6 +48,8 @@
             "artifact" (k)
             "equipment" ())
 
+    "print" (case (first args)
+              (output c))
     "set" (case (first args)
             ("age" "ag") (age c (second args))
             ("arc" "ar") (arc c (second args))
